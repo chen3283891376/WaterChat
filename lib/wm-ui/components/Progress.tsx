@@ -11,7 +11,7 @@ export function Progress({
     const width = Math.round((value / max) * 100);
 
     return (
-        <div className={'wm-progress ' + className}>
+        <div className={'wm-progress ' + className} {...props}>
             <div className="wm-progress-bar" style={{ width: `${width}%` }}>
                 {showText ? `${width}%` : null}
             </div>
