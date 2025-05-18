@@ -1,0 +1,15 @@
+.wm-progress {
+    display: flex;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: var(--radius-md);
+    height: 25px;
+    background-color: var(--color-slate-200);
+}
+
+.wm-progress-bar {
+    border-radius: var(--radius-md);
+    text-align: center;
+    background-color: var(--color-sky-500);
+    transition: width 0.5s ease-in-out;
+}
