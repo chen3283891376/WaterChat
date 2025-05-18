@@ -1,7 +1,7 @@
 {
-  "name": "wm-ui",
-  "version": "0.1.0",
-  "description": "Water Chat UI Library",
-  "main": "index.tsx",
-  "private": true
+    "name": "wm-ui",
+    "version": "0.1.0",
+    "description": "Water Chat UI Library",
+    "main": "index.tsx",
+    "private": true
 }
