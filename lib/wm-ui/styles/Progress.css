@@ -5,6 +5,11 @@
     border-radius: var(--radius-md);
     height: 25px;
     background-color: var(--color-slate-200);
+
+    &:where(.dark, .dark *) {
+        background-color: var(--color-slate-800);
+        border-color: white;
+    }
 }
 
 .wm-progress-bar {
@@ -12,4 +17,11 @@
     text-align: center;
     background-color: var(--color-sky-500);
     transition: width 0.5s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+    .wm-progress {
+        background-color: var(--color-slate-800);
+        border-color: white;
+    }
 }
