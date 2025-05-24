@@ -20,7 +20,7 @@ export function FormControl({ className = '', children, ...props }: React.InputH
     return (
         <input
             className={
-                'flex-1 rounded-md border border-b-2 border-black border-b-sky-500 px-1 text-black focus-visible:border-b-sky-600 focus-visible:outline dark:border-white dark:text-white ' +
+                'flex-1 rounded-md border border-b-2 border-black border-b-sky-500 px-1 text-black focus-visible:border-b-sky-600 focus-visible:outline dark:border-white dark:border-b-sky-500 dark:text-white ' +
                 className
             }
             {...props}
