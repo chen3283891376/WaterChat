@@ -23,7 +23,7 @@ export default function Components() {
 
             <div className="container mx-auto flex flex-col gap-2 px-2">
                 <h1>Welcome!</h1>
-                <Frame className="flex gap-2">
+                <Frame className="flex gap-2 p-2">
                     <Button>Test</Button>
                     <LinkButton
                         onClick={() => {
