@@ -10,6 +10,9 @@ import {
     Progress,
     CircleButton,
     Dialog,
+    Alert,
+    SuccessAlert,
+    DangerousAlert,
 } from '@/wm-ui';
 import type { Route } from './+types/components';
 import ToggleThemeButton from '~/components/ToggleThemeButton';
@@ -41,6 +44,9 @@ export default function Components() {
                     <FormControl />
                 </FormGroup>
                 <Progress value={60} max={100} />
+                <Alert>Hello</Alert>
+                <SuccessAlert>Hello</SuccessAlert>
+                <DangerousAlert>Hello</DangerousAlert>
             </div>
 
             <Dialog ref={dialogRef}>
