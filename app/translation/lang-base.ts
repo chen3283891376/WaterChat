@@ -12,6 +12,15 @@ type Translations = {
         'go to register': string;
         'login success': string;
     };
+    register: {
+        'welcome to register water-chat': string;
+        passport: string;
+        email: string;
+        password: string;
+        register: string;
+        'register success': string;
+        'return to login': string;
+    };
 };
 
 export { type Translations as default };

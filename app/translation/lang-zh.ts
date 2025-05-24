@@ -14,4 +14,13 @@ export default {
         'go to register': '去注册',
         'login success': '登录成功！',
     },
+    register: {
+        'welcome to register water-chat': '欢迎注册 WaterChat',
+        passport: '账号',
+        email: '邮箱',
+        password: '密码',
+        register: '注册',
+        'register success': '注册成功！',
+        'return to login': '返回登录',
+    },
 } satisfies Translations;

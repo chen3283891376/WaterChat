@@ -4,24 +4,26 @@ import ToggleThemeButton from '~/components/ToggleThemeButton';
 import Translator from '~/translation/translator';
 
 import type { ErrorResponse } from '~/types/base';
-import type { LoginResponse } from '~/types/user';
-import type { Route } from './+types/login';
+import type { RegisterResponse } from '~/types/user';
+import type { Route } from './+types/register';
 
-export default function Login() {
-    const tr = Translator('login', 'zh');
+export default function Register() {
+    const tr = Translator('register', 'zh');
 
     const [loginState, setLoginState] = useState('before');
     const [errorMessage, setErrorMessage] = useState('');
     const [nameValue, setNameValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
+    const [emailValue, setEmailValue] = useState('');
 
     const onClickLogin = async () => {
         const searchParams = new URLSearchParams({
             name: nameValue,
             password: passwordValue,
+            email: emailValue,
         });
 
-        const response = await fetch('/api/user/login', {
+        const response = await fetch('/api/user/register', {
             method: 'POST',
             body: searchParams.toString(),
             headers: {
@@ -30,7 +32,7 @@ export default function Login() {
         });
 
         if (response.ok) {
-            const responseData: LoginResponse = await response.json();
+            const responseData: RegisterResponse = await response.json();
             localStorage.setItem('access_token', responseData.access_token);
             setLoginState('success');
         } else {
@@ -51,10 +53,10 @@ export default function Login() {
                 </div>
                 <div className="flex flex-col">
                     <div className="m-auto flex h-fit flex-col" style={{ width: '90%', maxWidth: 400, minHeight: 300 }}>
-                        <h2 className="mb-2 text-2xl">{tr('welcome to login water-chat')}</h2>
+                        <h2 className="mb-2 text-2xl">{tr('welcome to register water-chat')}</h2>
 
                         <SuccessAlert style={{ display: loginState === 'success' ? 'block' : 'none' }}>
-                            {tr('login success')}
+                            {tr('register success')}
                         </SuccessAlert>
                         <DangerousAlert style={{ display: loginState === 'error' ? 'block' : 'none' }}>
                             {errorMessage}
@@ -73,6 +75,15 @@ export default function Login() {
                             </FormGroup>
 
                             <FormGroup>
+                                <FormLabel htmlFor="email">{tr('email')}</FormLabel>
+                                <FormControl
+                                    name="email"
+                                    value={emailValue}
+                                    onChange={e => setEmailValue(e.target.value)}
+                                />
+                            </FormGroup>
+
+                            <FormGroup>
                                 <FormLabel htmlFor="password">{tr('password')}</FormLabel>
                                 <FormControl
                                     name="password"
@@ -83,9 +94,9 @@ export default function Login() {
                             </FormGroup>
 
                             <div className="mx-auto flex gap-4">
-                                <LinkButton onClick={onClickLogin}>{tr('login')}</LinkButton>
-                                <LinkButton onClick={() => (location.href = '/register')}>
-                                    {tr('go to register')}
+                                <LinkButton onClick={onClickLogin}>{tr('register')}</LinkButton>
+                                <LinkButton onClick={() => (location.href = '/login')}>
+                                    {tr('return to login')}
                                 </LinkButton>
                             </div>
                         </Frame>
