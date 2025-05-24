@@ -18,10 +18,3 @@
     background-color: var(--color-sky-500);
     transition: width 0.5s ease-in-out;
 }
-
-@media (prefers-color-scheme: dark) {
-    .wm-progress {
-        background-color: var(--color-slate-800);
-        border-color: white;
-    }
-}
