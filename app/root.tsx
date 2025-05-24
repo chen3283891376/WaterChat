@@ -14,8 +14,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Meta />
                 <Links />
             </head>
-            <body style={{ zoom: '1' }}>
-                {children}
+            <body className="text-color-auto" style={{ zoom: '1' }}>
+                <div id="app">{children}</div>
                 <ScrollRestoration />
                 <Scripts />
             </body>

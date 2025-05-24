@@ -20,7 +20,9 @@ body {
     }
 }
 
-* {
+.text-color-auto {
+    color: black;
+
     &:where(.dark, .dark *) {
         color: white;
     }
@@ -44,4 +46,10 @@ body {
 }
 ::view-transition-new(root) {
     z-index: 1;
+}
+
+html,
+body,
+#app {
+    height: 100%;
 }
