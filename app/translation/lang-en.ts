@@ -12,5 +12,6 @@ export default {
         password: 'Password',
         login: 'Login',
         'go to register': 'Go to register',
+        'login success': 'Logged in successfully!',
     },
 } satisfies Translations;

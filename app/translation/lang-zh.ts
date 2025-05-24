@@ -12,5 +12,6 @@ export default {
         password: '密码',
         login: '登录',
         'go to register': '去注册',
+        'login success': '登录成功！',
     },
 } satisfies Translations;

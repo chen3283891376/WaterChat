@@ -10,6 +10,7 @@ type Translations = {
         password: string;
         login: string;
         'go to register': string;
+        'login success': string;
     };
 };
 
