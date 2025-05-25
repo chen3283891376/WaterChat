@@ -4,7 +4,7 @@ export function Button({ className = '', children, ...props }: React.ButtonHTMLA
     return (
         <button
             className={
-                'rounded-md border border-black px-2 py-1 text-black transition hover:bg-emerald-100 active:bg-emerald-200 dark:border-white dark:text-white dark:hover:bg-emerald-900 dark:active:bg-emerald-800 ' +
+                'rounded-md border border-black bg-white px-2 py-1 text-black transition hover:bg-slate-200 active:bg-slate-300 dark:border-white dark:bg-gray-950 dark:text-white dark:hover:bg-slate-800 dark:active:bg-slate-700 ' +
                 className
             }
             {...props}
@@ -52,7 +52,7 @@ export function CircleButton({
     return (
         <button
             className={
-                'rounded-full border border-black text-black transition hover:bg-slate-200 active:bg-slate-300 dark:border-white dark:text-white dark:hover:bg-slate-700 dark:active:bg-slate-600 ' +
+                'rounded-full border border-black bg-white text-black transition hover:bg-slate-200 active:bg-slate-300 dark:border-white dark:bg-gray-950 dark:text-white dark:hover:bg-slate-700 dark:active:bg-slate-600 ' +
                 className
             }
             style={{ ...style, width: 2 * radius, height: 2 * radius }}
