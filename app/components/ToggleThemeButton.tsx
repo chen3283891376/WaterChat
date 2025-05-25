@@ -1,7 +1,13 @@
 import React, { type MouseEvent, useState } from 'react';
 import { CircleButton } from '@/wm-ui';
+import IconSun from '~/icons/IconSun';
+import IconMoon from '~/icons/IconMoon';
 
-export default function ToggleThemeButton({ className = '', style }: React.HTMLAttributes<HTMLDivElement>) {
+export default function ToggleThemeButton({
+    radius = 20,
+    className = '',
+    style,
+}: { radius?: number } & React.HTMLAttributes<HTMLDivElement>) {
     const [darkState, setDarkState] = useState(false);
 
     const toggleTheme = (event: MouseEvent) => {
@@ -35,8 +41,8 @@ export default function ToggleThemeButton({ className = '', style }: React.HTMLA
     };
 
     return (
-        <CircleButton style={style} className={className} onClick={toggleTheme}>
-            {darkState ? '☀️' : '🌙'}
+        <CircleButton style={style} className={className} onClick={toggleTheme} radius={radius}>
+            <div className="m-auto w-fit">{darkState ? <IconSun size={24} /> : <IconMoon size={24} />}</div>
         </CircleButton>
     );
 }

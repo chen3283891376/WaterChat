@@ -16,3 +16,9 @@
 
 - `npm run typecheck` 类型检查
 - `npm run format` 使用 Prettier 格式化代码
+
+## 致谢列表：
+
+- Bootstrap Icons：提供了一些图标
+- TailwindCSS：提供了一些易用的工具。
+- 王若宇：曾经和我一起写了 WaterChat 的服务端和原来的 PySide6 版
