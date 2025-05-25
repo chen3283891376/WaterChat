@@ -1,0 +1,41 @@
+.wm-tooltip {
+    position: relative;
+}
+
+.wm-tooltip .wm-tooltip-text {
+    visibility: hidden;
+    content: attr(data-tooltip);
+
+    position: absolute;
+    top: calc(100% - 10px);
+    left: calc(100% - 10px);
+    max-width: 200px;
+    z-index: 100;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    padding: 8px 15px;
+    border: 1px solid var(--color-slate-500);
+    border-radius: 4px;
+    background: var(--color-slate-100);
+    &:where(.dark, .dark *) {
+        background-color: var(--color-slate-800);
+    }
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.wm-tooltip-top-right .wm-tooltip-text {
+    top: unset;
+    bottom: calc(100% - 10px);
+    left: calc(100% - 10px);
+}
+
+.wm-tooltip:hover .wm-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}

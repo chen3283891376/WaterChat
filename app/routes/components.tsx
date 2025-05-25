@@ -16,6 +16,7 @@ import {
 } from '@/wm-ui';
 import type { Route } from './+types/components';
 import ToggleThemeButton from '~/components/ToggleThemeButton';
+import { Tooltip } from '@/wm-ui/components/Tooltip';
 
 export default function Components() {
     const dialogRef = useRef<HTMLDialogElement>(null);
@@ -47,6 +48,9 @@ export default function Components() {
                 <Alert>Hello</Alert>
                 <SuccessAlert>Hello</SuccessAlert>
                 <DangerousAlert>Hello</DangerousAlert>
+                <Tooltip tooltip="Aha!" className="w-fit">
+                    Hover me!
+                </Tooltip>
             </div>
 
             <Dialog ref={dialogRef}>
