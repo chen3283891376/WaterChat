@@ -43,15 +43,21 @@ export default function Register() {
     };
 
     return (
-        <>
+        <div className="flex h-full flex-col bg-slate-100 dark:bg-slate-800">
+            <div className="p-2">
+                <div className="flex gap-2 passport-title-bar">
+                    <img src="/watermelon.png" alt="logo" style={{ height: '24px' }} />
+                    <div>水瓜聊天</div>
+                </div>
+            </div>
             <div className="grid h-full grid-cols-1 md:grid-cols-2">
-                <div className="hidden bg-slate-200 p-10 md:block dark:bg-slate-700">
+                <div className="hidden p-10 md:block">
                     <h1 className="text-4xl">
                         <span className="text-green-500">Water</span>
                         <span className="text-blue-500">Chat</span>
                     </h1>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col bg-slate-200 dark:bg-slate-700 rounded-t-lg">
                     <div className="m-auto flex h-fit flex-col" style={{ width: '90%', maxWidth: 400, minHeight: 300 }}>
                         <h2 className="mb-2 text-2xl">{tr('welcome to register water-chat')}</h2>
 
@@ -103,7 +109,7 @@ export default function Register() {
                     </div>
                 </div>
             </div>
-            <ToggleThemeButton style={{ position: 'absolute', top: 20, right: 20, zIndex: 9 }} />
-        </>
+            <ToggleThemeButton style={{ position: 'absolute', bottom: 20, left: 20, zIndex: 9 }} />
+        </div>
     );
 }
