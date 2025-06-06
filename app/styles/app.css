@@ -53,3 +53,9 @@ body,
 #app {
     height: 100%;
 }
+
+.title-bar {
+    padding-left: env(titlebar-area-x);
+    width: calc(env(titlebar-area-width) - 16px);
+    -webkit-app-region: drag;
+}

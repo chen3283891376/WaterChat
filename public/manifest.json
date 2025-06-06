@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "Water Chat",
+    "short_name": "WaterChat",
+    "description": "A chat software looks like water. :D",
+    "start_url": "/",
+    "theme_color": "#ffffff",
+    "display": "standalone",
+    "display_override": ["window-controls-overlay", "standalone"],
+    "icons": [
+        {
+            "src": "watermelon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "watermelon192x.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
