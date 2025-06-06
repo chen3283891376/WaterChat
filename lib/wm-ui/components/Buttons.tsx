@@ -1,6 +1,9 @@
 import React from 'react';
+import type { RefElement } from '../types';
 
-export function Button({ className = '', children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+export function Button({ className = '', children, ...props }: RefElement<HTMLButtonElement, ButtonProps>) {
     return (
         <button
             className={
@@ -14,7 +17,7 @@ export function Button({ className = '', children, ...props }: React.ButtonHTMLA
     );
 }
 
-export function LinkButton({ className = '', children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+export function LinkButton({ className = '', children, ...props }: RefElement<HTMLButtonElement, ButtonProps>) {
     return (
         <button
             className={
@@ -28,7 +31,7 @@ export function LinkButton({ className = '', children, ...props }: React.ButtonH
     );
 }
 
-export function DangerousButton({ className = '', children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+export function DangerousButton({ className = '', children, ...props }: RefElement<HTMLButtonElement, ButtonProps>) {
     return (
         <button
             className={
@@ -48,7 +51,7 @@ export function CircleButton({
     style = {},
     children,
     ...props
-}: { radius?: number } & React.ButtonHTMLAttributes<HTMLButtonElement>) {
+}: { radius?: number } & RefElement<HTMLButtonElement, ButtonProps>) {
     return (
         <button
             className={

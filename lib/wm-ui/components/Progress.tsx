@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Progress.css';
+import type { RefElement } from '../types';
 
 export function Progress({
     value = 60,
@@ -7,7 +8,7 @@ export function Progress({
     showText = true,
     className = '',
     ...props
-}: { value?: number; max?: number; showText?: boolean } & React.HTMLAttributes<HTMLDivElement>) {
+}: { value?: number; max?: number; showText?: boolean } & RefElement<HTMLDivElement>) {
     const width = Math.round((value / max) * 100);
 
     return (

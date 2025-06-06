@@ -1,12 +1,11 @@
-import React, { forwardRef } from 'react';
+import Reac from 'react';
 import '../styles/Dialog.css';
+import type { RefElement } from '../types';
 
-export const Dialog = forwardRef<HTMLDialogElement, React.DialogHTMLAttributes<HTMLDialogElement>>(
-    ({ className = '', children, ...props }, ref) => {
-        return (
-            <dialog className={'wm-dialog ' + className} {...props} ref={ref}>
-                {children}
-            </dialog>
-        );
-    },
-);
+export function Dialog({ className = '', children, ...props }: RefElement<HTMLDialogElement, React.DialogHTMLAttributes<HTMLDialogElement>>) {
+    return (
+        <dialog className={'wm-dialog ' + className} {...props}>
+            {children}
+        </dialog>
+    );
+}
