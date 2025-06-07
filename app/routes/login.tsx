@@ -47,7 +47,7 @@ export default function Login() {
     return (
         <div className="flex h-full flex-col bg-slate-100 dark:bg-slate-800">
             <div className="drag-area p-2">
-                <div className="passport-title-bar flex gap-2">
+                <div className="title-bar flex gap-2">
                     <img src="/watermelon.png" alt="logo" style={{ height: '24px' }} />
                     <div>水瓜聊天</div>
                 </div>

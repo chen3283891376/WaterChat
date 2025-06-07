@@ -68,8 +68,3 @@ body,
     padding-left: env(titlebar-area-x);
     width: calc(env(titlebar-area-width) - 16px);
 }
-
-.passport-title-bar {
-    padding-left: env(titlebar-area-x);
-    width: calc(env(titlebar-area-width) - 16px);
-}
