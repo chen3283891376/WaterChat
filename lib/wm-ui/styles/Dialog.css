@@ -5,9 +5,13 @@
     overflow: auto;
     border: 1px solid black;
     border-radius: 5px;
+    background-color: var(--color-slate-100);
+    color: black;
 
     &:where(.dark, .dark *) {
         border-color: white;
+        background-color: var(--color-slate-800);
+        color: white;
     }
 }
 

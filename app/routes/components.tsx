@@ -13,6 +13,7 @@ import {
     Alert,
     SuccessAlert,
     DangerousAlert,
+    TextArea,
 } from '@/wm-ui';
 import type { Route } from './+types/components';
 import ToggleThemeButton from '~/components/ToggleThemeButton';
@@ -51,6 +52,7 @@ export default function Components() {
                 <Tooltip tooltip="Aha!" className="w-fit">
                     Hover me!
                 </Tooltip>
+                <TextArea />
             </div>
 
             <Dialog ref={dialogRef}>
