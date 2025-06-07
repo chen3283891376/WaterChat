@@ -4,11 +4,13 @@ import type { RoomType } from '~/types/room';
 
 export class User {
     public isLoadedInfo = false;
-    private token: string;
+
     public name: string = '不存在的用户';
     public id: number = 999999999;
     public avatar: string = 'https://livefile.xesimg.com/programme/python_assets/e6f6b37815399773a2f7365cf805077f.png';
     public avatar_base64: string = 'e6f6b37815399773a2f7365cf805077f.png';
+
+    private token: string;
 
     constructor(token: string) {
         this.token = token;
