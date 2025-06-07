@@ -1,15 +1,12 @@
 .wm-dialog {
     margin: auto;
-    padding: 10px;
     width: min(calc(100vw - 50px), 800px);
     height: min(calc(100vh - 50px), 600px);
     overflow: auto;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: var(--color-slate-200);
 
     &:where(.dark, .dark *) {
-        background-color: var(--color-slate-700);
         border-color: white;
     }
 }
@@ -17,4 +14,22 @@
 .wm-dialog:-internal-dialog-in-top-layer::backdrop {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(6px);
+}
+
+.wm-dialog-title-bar {
+    background-color: var(--color-slate-100);
+
+    &:where(.dark, .dark *) {
+        background-color: var(--color-slate-800);
+    }
+}
+
+.wm-dialog-content {
+    background-color: var(--color-slate-200);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    &:where(.dark, .dark *) {
+        background-color: var(--color-slate-700);
+    }
 }

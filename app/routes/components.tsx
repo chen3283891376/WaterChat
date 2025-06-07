@@ -55,9 +55,6 @@ export default function Components() {
 
             <Dialog ref={dialogRef}>
                 <h1>Test</h1>
-                <form method="dialog">
-                    <Button>OK</Button>
-                </form>
             </Dialog>
         </>
     );
