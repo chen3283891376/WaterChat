@@ -14,6 +14,9 @@ import { getAccessToken } from '~/utils';
 import { RoomList } from '~/components/Rooms';
 import { Tooltip } from '@/wm-ui/components/Tooltip';
 import { User } from '~/api/user';
+import BlankChatFrame from '~/containers/BlankChatFrame';
+import { Room } from '~/api/room';
+import ChatFrame from '~/containers/ChatFrame';
 
 export default function Index() {
     const [language, setLanguage] = useState<Languages>('zh');
@@ -23,6 +26,7 @@ export default function Index() {
     const [isLoadedInfo, setIsLoadedInfo] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [rooms, setRooms] = useState<RoomType[]>([]);
+    const [currentRoom, setCurrentRoom] = useState<Room | null>(null);
 
     useEffect(() => {
         (async () => {
@@ -120,15 +124,16 @@ export default function Index() {
                 <Frame className="flex flex-col bg-white dark:bg-gray-950" style={{ width: 150 }}>
                     <h1 className="p-1 text-2xl">{currentPage === 1 ? '群组' : '私聊'}</h1>
                     <hr />
-                    <RoomList infos={rooms} onClick={roomId => console.log('打开房间', roomId)} />
+                    <RoomList
+                        infos={rooms}
+                        onClick={async roomId => {
+                            const room = new Room(roomId);
+                            await room.load();
+                            setCurrentRoom(room);
+                        }}
+                    />
                 </Frame>
-                <div className="flex-1 bg-white dark:bg-gray-950">
-                    <Frame className="flex h-full flex-col">
-                        <div className="m-auto text-center text-2xl text-gray-300 dark:text-gray-700">
-                            欢迎来到 WaterChat
-                        </div>
-                    </Frame>
-                </div>
+                <div className="flex-1">{currentRoom ? <ChatFrame room={currentRoom} /> : <BlankChatFrame />}</div>
             </div>
         </div>
     );
