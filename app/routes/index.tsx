@@ -58,18 +58,18 @@ export default function Index() {
 
     return (
         <div className="flex h-full flex-col gap-2 bg-slate-100 p-2 dark:bg-slate-800">
-            <div className="flex gap-2 title-bar">
+            <div className="flex gap-2 title-bar drag-area">
                 <img src="/watermelon.png" alt="logo" style={{ height: '24px' }} />
                 <div>水瓜聊天</div>
                 <div className="flex-1">{/* 幽灵 div 实现中间留白 */}</div>
                 <div>欢迎您，{isLoadedInfo ? user.current.name : '******'}</div>
             </div>
-            <div className="flex flex-1 gap-2">
-                <div className="flex flex-col gap-2" style={{ width: 44 }}>
+            <div className="flex flex-1 gap-2 ">
+                <div className="flex flex-col gap-2 drag-area" style={{ width: 44 }}>
                     <Tooltip tooltip="群组">
                         <LinkButton
                             className={
-                                'py-2 hover:bg-slate-200' + (currentPage === 1 ? ' bg-slate-200 dark:bg-slate-700' : '')
+                                'py-2 hover:bg-slate-200 no-drag-area' + (currentPage === 1 ? ' bg-slate-200 dark:bg-slate-700' : '')
                             }
                             onClick={() => {
                                 setCurrentPage(1);
@@ -83,7 +83,7 @@ export default function Index() {
                     <Tooltip tooltip="好友">
                         <LinkButton
                             className={
-                                'py-2 hover:bg-slate-200' + (currentPage === 2 ? ' bg-slate-200 dark:bg-slate-700' : '')
+                                'py-2 hover:bg-slate-200 no-drag-area' + (currentPage === 2 ? ' bg-slate-200 dark:bg-slate-700' : '')
                             }
                             onClick={() => {
                                 setCurrentPage(2);
@@ -95,22 +95,22 @@ export default function Index() {
                     </Tooltip>
 
                     <Tooltip tooltip="添加好友">
-                        <LinkButton className="py-2 hover:bg-slate-200">
+                        <LinkButton className="py-2 hover:bg-slate-200 no-drag-area">
                             <IconAddFriend size="100%" />
                         </LinkButton>
                     </Tooltip>
 
                     <Tooltip tooltip="创建房间">
-                        <LinkButton className="py-2 hover:bg-slate-200">
+                        <LinkButton className="py-2 hover:bg-slate-200 no-drag-area">
                             <IconCreateRoom size="100%" />
                         </LinkButton>
                     </Tooltip>
 
                     <div className="flex-1">{/* 幽灵 div 实现中间留白 */}</div>
-                    <ToggleThemeButton className="text-2xl" radius={22} />
+                    <ToggleThemeButton className="text-2xl no-drag-area" radius={22} />
 
                     <Tooltip className="wm-tooltip-top-right" tooltip="设置">
-                        <LinkButton className="py-2 hover:bg-slate-200">
+                        <LinkButton className="py-2 hover:bg-slate-200 no-drag-area">
                             <IconSettings size="100%" />
                         </LinkButton>
                     </Tooltip>

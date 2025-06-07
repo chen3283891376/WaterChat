@@ -35,6 +35,10 @@ export default function Register() {
             const responseData: RegisterResponse = await response.json();
             localStorage.setItem('access_token', responseData.access_token);
             setLoginState('success');
+
+            setTimeout(() => {
+                location.href = "/";
+            }, 1000);
         } else {
             const responseData: ErrorResponse = await response.json();
             setErrorMessage(responseData.message);
@@ -44,20 +48,21 @@ export default function Register() {
 
     return (
         <div className="flex h-full flex-col bg-slate-100 dark:bg-slate-800">
-            <div className="p-2">
+            <div className="p-2 drag-area">
                 <div className="flex gap-2 passport-title-bar">
                     <img src="/watermelon.png" alt="logo" style={{ height: '24px' }} />
                     <div>水瓜聊天</div>
                 </div>
             </div>
-            <div className="grid h-full grid-cols-1 md:grid-cols-2">
-                <div className="hidden p-10 md:block">
+            <div className="grid h-full grid-cols-1 md:grid-cols-3">
+                <div className="hidden p-10 md:block drag-area">
                     <h1 className="text-4xl">
                         <span className="text-green-500">Water</span>
                         <span className="text-blue-500">Chat</span>
                     </h1>
                 </div>
-                <div className="flex flex-col bg-slate-200 dark:bg-slate-700 rounded-t-lg">
+                <div
+                    className="flex flex-col bg-slate-200 dark:bg-slate-700 rounded-t-xl md:rounded-tr-none col-span-2">
                     <div className="m-auto flex h-fit flex-col" style={{ width: '90%', maxWidth: 400, minHeight: 300 }}>
                         <h2 className="mb-2 text-2xl">{tr('welcome to register water-chat')}</h2>
 
@@ -109,7 +114,8 @@ export default function Register() {
                     </div>
                 </div>
             </div>
-            <ToggleThemeButton style={{ position: 'absolute', bottom: 20, left: 20, zIndex: 9 }} />
+            <ToggleThemeButton className="no-drag-area"
+                               style={{ position: 'absolute', bottom: 20, left: 20, zIndex: 9 }} />
         </div>
     );
 }
