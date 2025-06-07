@@ -9,7 +9,11 @@ export function FormGroup({ className = '', children, ...props }: RefElement<HTM
     );
 }
 
-export function FormLabel({ className = '', children, ...props }: RefElement<HTMLLabelElement, React.LabelHTMLAttributes<HTMLLabelElement>>) {
+export function FormLabel({
+    className = '',
+    children,
+    ...props
+}: RefElement<HTMLLabelElement, React.LabelHTMLAttributes<HTMLLabelElement>>) {
     return (
         <label className={'text-black dark:text-white ' + className} {...props}>
             {children}
@@ -17,7 +21,11 @@ export function FormLabel({ className = '', children, ...props }: RefElement<HTM
     );
 }
 
-export function FormControl({ className = '', children, ...props }: RefElement<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>) {
+export function FormControl({
+    className = '',
+    children,
+    ...props
+}: RefElement<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>) {
     return (
         <input
             className={

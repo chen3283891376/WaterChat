@@ -1,12 +1,8 @@
-const VERSION = "v1";
+const VERSION = 'v1';
 const CACHE_NAME = `water-chat-${VERSION}`;
-const APP_STATIC_RESOURCES = [
-    "/watermelon.png",
-    "/watermelon192x.png",
-    "/apple-touch-icon.png",
-];
+const APP_STATIC_RESOURCES = ['/watermelon.png', '/watermelon192x.png', '/apple-touch-icon.png'];
 
-self.addEventListener("install", (event) => {
+self.addEventListener('install', event => {
     event.waitUntil(
         (async () => {
             const cache = await caches.open(CACHE_NAME);
@@ -15,12 +11,12 @@ self.addEventListener("install", (event) => {
     );
 });
 
-self.addEventListener("activate", (event) => {
+self.addEventListener('activate', event => {
     event.waitUntil(
         (async () => {
             const names = await caches.keys();
             await Promise.all(
-                names.map((name) => {
+                names.map(name => {
                     if (name !== CACHE_NAME) {
                         return caches.delete(name);
                     }

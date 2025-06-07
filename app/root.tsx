@@ -7,33 +7,25 @@ import './styles/app.css';
 export function Layout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-        <head>
-            <meta charSet="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>WaterChat</title>
-            <link rel="icon" href="/watermelon.png" />
-            <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-            <meta name="description" content="A chat software looks like water. :D" />
-            <meta
-                name="theme-color"
-                media="(prefers-color-scheme: light)"
-                content="#f1f5f9"
-            />
-            <meta
-                name="theme-color"
-                media="(prefers-color-scheme: dark)"
-                content="#1d293d"
-            />
-            <script src="/registerSW.js" />
-            <link rel="manifest" href="/manifest.json" />
-            <Meta />
-            <Links />
-        </head>
-        <body className="text-color-auto" style={{ zoom: '1' }}>
-        <div id="app">{children}</div>
-        <ScrollRestoration />
-        <Scripts />
-        </body>
+            <head>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <title>WaterChat</title>
+                <link rel="icon" href="/watermelon.png" />
+                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+                <meta name="description" content="A chat software looks like water. :D" />
+                <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f5f9" />
+                <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1d293d" />
+                <script src="/registerSW.js" />
+                <link rel="manifest" href="/manifest.json" />
+                <Meta />
+                <Links />
+            </head>
+            <body className="text-color-auto" style={{ zoom: '1' }}>
+                <div id="app">{children}</div>
+                <ScrollRestoration />
+                <Scripts />
+            </body>
         </html>
     );
 }
